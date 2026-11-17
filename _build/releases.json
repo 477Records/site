@@ -112,6 +112,13 @@
   "apple": "https://music.apple.com/us/album/something-about-you-single/1875059440"
  },
  {
+  "id": 6801248485,
+  "title": "intoodeep",
+  "artist": "Brothel",
+  "date": "2026-01-23",
+  "apple": "https://music.apple.com/us/album/intoodeep-single/6801248485"
+ },
+ {
   "id": 1846131476,
   "title": "Purified",
   "artist": "Michele Morrone",
@@ -147,11 +154,25 @@
   "apple": "https://music.apple.com/us/album/my-heart-is-all-gone-single/1815586139"
  },
  {
+  "id": 6801248718,
+  "title": "destruction",
+  "artist": "Brothel",
+  "date": "2025-04-25",
+  "apple": "https://music.apple.com/us/album/destruction-single/6801248718"
+ },
+ {
   "id": 1804997122,
   "title": "Unobtainable",
   "artist": "Michele Morrone",
   "date": "2025-04-18",
   "apple": "https://music.apple.com/us/album/unobtainable-single/1804997122"
+ },
+ {
+  "id": 6801248241,
+  "title": "shallow",
+  "artist": "Brothel",
+  "date": "2025-03-28",
+  "apple": "https://music.apple.com/us/album/shallow-single/6801248241"
  },
  {
   "id": 1802965245,
@@ -182,6 +203,20 @@
   "apple": "https://music.apple.com/us/album/leave-me-feat-two-feet-single/1767678586"
  },
  {
+  "id": 6801247550,
+  "title": "MISSME",
+  "artist": "Brothel",
+  "date": "2024-09-27",
+  "apple": "https://music.apple.com/us/album/missme-single/6801247550"
+ },
+ {
+  "id": 6801247460,
+  "title": "PAIN",
+  "artist": "Brothel & HEXY",
+  "date": "2024-08-23",
+  "apple": "https://music.apple.com/us/album/pain-single/6801247460"
+ },
+ {
   "id": 1757641635,
   "title": "Darling, I'm on Your Side",
   "artist": "Two Feet",
@@ -203,6 +238,13 @@
   "apple": "https://music.apple.com/us/album/let-me-go-single/1746216715"
  },
  {
+  "id": 6801247719,
+  "title": "Another Life",
+  "artist": "Brothel & Rufus Campbell",
+  "date": "2024-05-24",
+  "apple": "https://music.apple.com/us/album/another-life-single/6801247719"
+ },
+ {
   "id": 1730609425,
   "title": "Falling to Pieces",
   "artist": "Two Feet",
@@ -210,11 +252,25 @@
   "apple": "https://music.apple.com/us/album/falling-to-pieces-single/1730609425"
  },
  {
+  "id": 6801261623,
+  "title": "screams",
+  "artist": "Brothel",
+  "date": "2024-02-02",
+  "apple": "https://music.apple.com/us/album/screams-single/6801261623"
+ },
+ {
   "id": 1717684675,
   "title": "KILL ANYONE (feat. Ari Abdul)",
   "artist": "Two Feet",
   "date": "2023-12-15",
   "apple": "https://music.apple.com/us/album/kill-anyone-feat-ari-abdul-single/1717684675"
+ },
+ {
+  "id": 6801261676,
+  "title": "Daddy Issues",
+  "artist": "Brothel",
+  "date": "2023-11-03",
+  "apple": "https://music.apple.com/us/album/daddy-issues-single/6801261676"
  },
  {
   "id": 1734514600,
@@ -231,6 +287,20 @@
   "apple": "https://music.apple.com/us/album/before-everything-changes-ep/1735750544"
  },
  {
+  "id": 6801248607,
+  "title": "FIEND",
+  "artist": "Brothel & almogfx",
+  "date": "2023-08-11",
+  "apple": "https://music.apple.com/us/album/fiend-single/6801248607"
+ },
+ {
+  "id": 6801261835,
+  "title": "colorblind.",
+  "artist": "Brothel & Onhell",
+  "date": "2023-07-21",
+  "apple": "https://music.apple.com/us/album/colorblind-single/6801261835"
+ },
+ {
   "id": 1735749766,
   "title": "More Than Chemical (feat. Two Feet)",
   "artist": "Bec Lauder and The Noise",
@@ -243,6 +313,13 @@
   "artist": "Bec Lauder and The Noise",
   "date": "2023-05-05",
   "apple": "https://music.apple.com/us/album/hard-to-get-feat-two-feet-single/1735543639"
+ },
+ {
+  "id": 6801261661,
+  "title": "ISOLATION",
+  "artist": "Brothel",
+  "date": "2023-04-28",
+  "apple": "https://music.apple.com/us/album/isolation-single/6801261661"
  },
  {
   "id": 1736811471,
@@ -259,10 +336,388 @@
   "apple": "https://music.apple.com/us/album/city-single/1734879832"
  },
  {
+  "id": 6801261580,
+  "title": "All I Wanted",
+  "artist": "Brothel",
+  "date": "2023-03-10",
+  "apple": "https://music.apple.com/us/album/all-i-wanted-single/6801261580"
+ },
+ {
   "id": 1734876612,
   "title": "I Want You Dead",
   "artist": "Two Feet & Allie Cabal",
   "date": "2023-02-03",
   "apple": "https://music.apple.com/us/album/i-want-you-dead-single/1734876612"
+ },
+ {
+  "id": 6801261453,
+  "title": "Timmy Turner",
+  "artist": "Brothel",
+  "date": "2023-02-03",
+  "apple": "https://music.apple.com/us/album/timmy-turner-single/6801261453"
+ },
+ {
+  "id": 6801261555,
+  "title": "SOLOMAS",
+  "artist": "Brothel",
+  "date": "2022-11-18",
+  "apple": "https://music.apple.com/us/album/solomas-single/6801261555"
+ },
+ {
+  "id": 6801607950,
+  "title": "LEGION",
+  "artist": "Brothel & enjoii",
+  "date": "2022-08-26",
+  "apple": "https://music.apple.com/us/album/legion-single/6801607950"
+ },
+ {
+  "id": 6801261788,
+  "title": "Forget It",
+  "artist": "Brothel",
+  "date": "2022-08-05",
+  "apple": "https://music.apple.com/us/album/forget-it-single/6801261788"
+ },
+ {
+  "id": 6801261571,
+  "title": "Us and Them",
+  "artist": "Brothel, barnacle boi & Derek Pope",
+  "date": "2022-07-15",
+  "apple": "https://music.apple.com/us/album/us-and-them-single/6801261571"
+ },
+ {
+  "id": 6801261233,
+  "title": "Running Up That Hill",
+  "artist": "Brothel",
+  "date": "2022-07-01",
+  "apple": "https://music.apple.com/us/album/running-up-that-hill-single/6801261233"
+ },
+ {
+  "id": 6801261977,
+  "title": "APATHY",
+  "artist": "Brothel",
+  "date": "2022-03-25",
+  "apple": "https://music.apple.com/us/album/apathy-single/6801261977"
+ },
+ {
+  "id": 6801262087,
+  "title": "DESTROY",
+  "artist": "Brothel",
+  "date": "2022-02-04",
+  "apple": "https://music.apple.com/us/album/destroy-single/6801262087"
+ },
+ {
+  "id": 6801256925,
+  "title": "buffering",
+  "artist": "Brothel",
+  "date": "2022-01-07",
+  "apple": "https://music.apple.com/us/album/buffering-single/6801256925"
+ },
+ {
+  "id": 6801493427,
+  "title": "g o o d b y e",
+  "artist": "Brothel",
+  "date": "2021-11-12",
+  "apple": "https://music.apple.com/us/album/g-o-o-d-b-y-e-single/6801493427"
+ },
+ {
+  "id": 6801253330,
+  "title": "DROWNING",
+  "artist": "Brothel & enjoii",
+  "date": "2021-10-29",
+  "apple": "https://music.apple.com/us/album/drowning-single/6801253330"
+ },
+ {
+  "id": 6801248450,
+  "title": "Slide",
+  "artist": "Brothel & barnacle boi",
+  "date": "2021-10-15",
+  "apple": "https://music.apple.com/us/album/slide-single/6801248450"
+ },
+ {
+  "id": 6801248545,
+  "title": "NIYA",
+  "artist": "Brothel & enjoii",
+  "date": "2021-09-10",
+  "apple": "https://music.apple.com/us/album/niya-single/6801248545"
+ },
+ {
+  "id": 6801248342,
+  "title": "Searching For The End",
+  "artist": "Brothel & AFTERMYFALL",
+  "date": "2021-07-22",
+  "apple": "https://music.apple.com/us/album/searching-for-the-end-single/6801248342"
+ },
+ {
+  "id": 6801248645,
+  "title": "HOME",
+  "artist": "Brothel",
+  "date": "2021-06-11",
+  "apple": "https://music.apple.com/us/album/home-single/6801248645"
+ },
+ {
+  "id": 6801248904,
+  "title": "Save Your Tears",
+  "artist": "Brothel & CASHFORGOLD",
+  "date": "2021-05-21",
+  "apple": "https://music.apple.com/us/album/save-your-tears-single/6801248904"
+ },
+ {
+  "id": 6801607977,
+  "title": "TEARDROP (feat. LunaMoon)",
+  "artist": "Brothel & enjoii",
+  "date": "2021-04-02",
+  "apple": "https://music.apple.com/us/album/teardrop-feat-lunamoon-single/6801607977"
+ },
+ {
+  "id": 6801247712,
+  "title": "dull.",
+  "artist": "Brothel",
+  "date": "2021-01-29",
+  "apple": "https://music.apple.com/us/album/dull-single/6801247712"
+ },
+ {
+  "id": 6801277522,
+  "title": "VEDMA",
+  "artist": "Brothel & enjoii",
+  "date": "2021-01-08",
+  "apple": "https://music.apple.com/us/album/vedma-single/6801277522"
+ },
+ {
+  "id": 6801284365,
+  "title": "REQUIEM",
+  "artist": "Brothel",
+  "date": "2020-11-17",
+  "apple": "https://music.apple.com/us/album/requiem-single/6801284365"
+ },
+ {
+  "id": 6802373829,
+  "title": "Birth/Rebirth",
+  "artist": "Brothel, Sidewalks and Skeletons & Clepsydra",
+  "date": "2020-10-05",
+  "apple": "https://music.apple.com/us/album/birth-rebirth-single/6802373829"
+ },
+ {
+  "id": 6801301567,
+  "title": "Painsport",
+  "artist": "Brothel & Kareful",
+  "date": "2020-06-12",
+  "apple": "https://music.apple.com/us/album/painsport-single/6801301567"
+ },
+ {
+  "id": 6801540777,
+  "title": "Miræ",
+  "artist": "Brothel & Deadcrow",
+  "date": "2020-05-06",
+  "apple": "https://music.apple.com/us/album/mir%C3%A6-single/6801540777"
+ },
+ {
+  "id": 6801301444,
+  "title": "Vice (feat. Levitate)",
+  "artist": "Brothel",
+  "date": "2020-04-21",
+  "apple": "https://music.apple.com/us/album/vice-feat-levitate-single/6801301444"
+ },
+ {
+  "id": 6801277710,
+  "title": "Ur/All/alone",
+  "artist": "Brothel",
+  "date": "2020-02-14",
+  "apple": "https://music.apple.com/us/album/ur-all-alone-single/6801277710"
+ },
+ {
+  "id": 6802373938,
+  "title": "Smug (feat. Divine)",
+  "artist": "Brothel",
+  "date": "2020-02-12",
+  "apple": "https://music.apple.com/us/album/smug-feat-divine-single/6802373938"
+ },
+ {
+  "id": 6801261926,
+  "title": "Werlpool",
+  "artist": "Brothel",
+  "date": "2019-08-23",
+  "apple": "https://music.apple.com/us/album/werlpool-single/6801261926"
+ },
+ {
+  "id": 6801273474,
+  "title": "Inertia (feat. Juche)",
+  "artist": "Brothel",
+  "date": "2019-05-21",
+  "apple": "https://music.apple.com/us/album/inertia-feat-juche-single/6801273474"
+ },
+ {
+  "id": 6801268956,
+  "title": "Redskies",
+  "artist": "Brothel",
+  "date": "2019-03-14",
+  "apple": "https://music.apple.com/us/album/redskies/6801268956"
+ },
+ {
+  "id": 6801268462,
+  "title": "N O Kia",
+  "artist": "Brothel",
+  "date": "2018-12-29",
+  "apple": "https://music.apple.com/us/album/n-o-kia-single/6801268462"
+ },
+ {
+  "id": 6801265376,
+  "title": "4ever.",
+  "artist": "Brothel",
+  "date": "2018-11-27",
+  "apple": "https://music.apple.com/us/album/4ever-single/6801265376"
+ },
+ {
+  "id": 6802374234,
+  "title": "Dreams (feat. Sidewalks and Skeletons)",
+  "artist": "Brothel",
+  "date": "2018-10-28",
+  "apple": "https://music.apple.com/us/album/dreams-feat-sidewalks-and-skeletons-single/6802374234"
+ },
+ {
+  "id": 6802374069,
+  "title": "Drophead (feat. Divine)",
+  "artist": "Brothel",
+  "date": "2018-07-23",
+  "apple": "https://music.apple.com/us/album/drophead-feat-divine-single/6802374069"
+ },
+ {
+  "id": 6801608011,
+  "title": "Leglxck",
+  "artist": "Brothel",
+  "date": "2018-06-13",
+  "apple": "https://music.apple.com/us/album/leglxck-single/6801608011"
+ },
+ {
+  "id": 6802374088,
+  "title": "Virus (feat. Sidewalks and Skeletons)",
+  "artist": "Brothel",
+  "date": "2018-06-05",
+  "apple": "https://music.apple.com/us/album/virus-feat-sidewalks-and-skeletons-single/6802374088"
+ },
+ {
+  "id": 6801265509,
+  "title": "Thoughts",
+  "artist": "Brothel",
+  "date": "2018-05-24",
+  "apple": "https://music.apple.com/us/album/thoughts-single/6801265509"
+ },
+ {
+  "id": 6801540956,
+  "title": "This Will Hurt You",
+  "artist": "Brothel",
+  "date": "2018-05-08",
+  "apple": "https://music.apple.com/us/album/this-will-hurt-you-single/6801540956"
+ },
+ {
+  "id": 6801541163,
+  "title": "Chairs",
+  "artist": "Brothel",
+  "date": "2018-03-20",
+  "apple": "https://music.apple.com/us/album/chairs-single/6801541163"
+ },
+ {
+  "id": 6801541363,
+  "title": "Notthere.",
+  "artist": "Brothel",
+  "date": "2018-02-28",
+  "apple": "https://music.apple.com/us/album/notthere-single/6801541363"
+ },
+ {
+  "id": 6801540173,
+  "title": "Dontspeak",
+  "artist": "Brothel",
+  "date": "2018-02-15",
+  "apple": "https://music.apple.com/us/album/dontspeak-single/6801540173"
+ },
+ {
+  "id": 6802374040,
+  "title": "Dissolution (feat. Sidewalks and Skeletons)",
+  "artist": "Brothel",
+  "date": "2018-02-15",
+  "apple": "https://music.apple.com/us/album/dissolution-feat-sidewalks-and-skeletons-single/6802374040"
+ },
+ {
+  "id": 6801540837,
+  "title": "Throwaway",
+  "artist": "Brothel",
+  "date": "2018-02-15",
+  "apple": "https://music.apple.com/us/album/throwaway-single/6801540837"
+ },
+ {
+  "id": 6801541175,
+  "title": "Drwning",
+  "artist": "Brothel",
+  "date": "2018-02-15",
+  "apple": "https://music.apple.com/us/album/drwning-single/6801541175"
+ },
+ {
+  "id": 6802374050,
+  "title": "Glasscoffin (feat. Sidewalks and Skeletons)",
+  "artist": "Brothel",
+  "date": "2018-02-15",
+  "apple": "https://music.apple.com/us/album/glasscoffin-feat-sidewalks-and-skeletons-single/6802374050"
+ },
+ {
+  "id": 6801608149,
+  "title": "Ghost (feat. eugene cam)",
+  "artist": "Brothel",
+  "date": "2018-02-15",
+  "apple": "https://music.apple.com/us/album/ghost-feat-eugene-cam-single/6801608149"
+ },
+ {
+  "id": 6801541271,
+  "title": "Disengage (feat. Forerunner)",
+  "artist": "Brothel",
+  "date": "2018-01-30",
+  "apple": "https://music.apple.com/us/album/disengage-feat-forerunner-single/6801541271"
+ },
+ {
+  "id": 6802373951,
+  "title": "Fractured (feat. Divine)",
+  "artist": "Brothel",
+  "date": "2017-10-23",
+  "apple": "https://music.apple.com/us/album/fractured-feat-divine-single/6802373951"
+ },
+ {
+  "id": 6801541140,
+  "title": "Rueda (feat. Niteboi)",
+  "artist": "Brothel",
+  "date": "2017-09-11",
+  "apple": "https://music.apple.com/us/album/rueda-feat-niteboi-single/6801541140"
+ },
+ {
+  "id": 6801541006,
+  "title": "Q",
+  "artist": "Brothel",
+  "date": "2017-07-17",
+  "apple": "https://music.apple.com/us/album/q-single/6801541006"
+ },
+ {
+  "id": 6801540776,
+  "title": "Numb",
+  "artist": "Brothel",
+  "date": "2017-05-08",
+  "apple": "https://music.apple.com/us/album/numb-single/6801540776"
+ },
+ {
+  "id": 6802373927,
+  "title": "Pairplay (feat. Divine)",
+  "artist": "Brothel",
+  "date": "2017-05-04",
+  "apple": "https://music.apple.com/us/album/pairplay-feat-divine-single/6802373927"
+ },
+ {
+  "id": 6801541131,
+  "title": "Ignore",
+  "artist": "Brothel",
+  "date": "2017-05-01",
+  "apple": "https://music.apple.com/us/album/ignore-single/6801541131"
+ },
+ {
+  "id": 6801541017,
+  "title": "Someonelikeyou",
+  "artist": "Brothel",
+  "date": "2017-04-25",
+  "apple": "https://music.apple.com/us/album/someonelikeyou-single/6801541017"
  }
 ]
