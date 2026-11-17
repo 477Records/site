@@ -27,6 +27,8 @@ ARTISTS = [
 EXTRA_FILTERS = [dict(slug="wntrbrk", name="WNTRBRK", match="wntrbrk")]
 
 e = html.escape
+import hashlib
+CSS_V = hashlib.md5(open(os.path.join(ROOT, "assets", "site.css"), "rb").read()).hexdigest()[:8]
 releases = json.load(open(os.path.join(HERE, "releases.json")))
 releases.sort(key=lambda r: r["date"], reverse=True)
 
@@ -63,7 +65,7 @@ def page(name, title, desc, body, current=""):
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v={CSS_V}">
 </head>
 <body>
 <header class="top">
