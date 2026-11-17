@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roster | 477 Records</title>
+<meta name="description" content="The artists signed to 477 Records.">
+<meta property="og:title" content="Roster | 477 Records">
+<meta property="og:description" content="The artists signed to 477 Records.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.477records.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#edf0eb">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="top">
+  <a class="home" href="./">477 Records</a>
+  <nav aria-label="Pages">
+    <a href="roster.html" aria-current="page">Roster</a>
+    <a href="releases.html">Releases</a>
+    <a href="./#contact">Contact</a>
+  </nav>
+</header>
+<main>
+  <h1 class="mega roster-word">Roster</h1>
+  <ol class="reel">
+    <li class="card" id="two-feet">
+      <a class="shot" href="#two-feet" aria-label="Two Feet"><img src="assets/twofeet.jpg" width="640" height="800" alt="Two Feet"></a>
+      <div class="info">
+        <h2>Two Feet</h2>
+        <p>25 releases on 477 Records<br>Latest: I can smell them on your dress (2026)<br>Next: Two Feet (Part 2), out Dec 25</p>
+        <p class="links"><a class="under" href="https://open.spotify.com/artist/5sWHDYs0csV6RS48xBl0tH" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="releases.html#two-feet">See releases</a></p>
+      </div>
+    </li>
+    <li class="card" id="michele-morrone">
+      <a class="shot" href="#michele-morrone" aria-label="Michele Morrone"><img src="assets/morrone.jpg" width="640" height="800" alt="Michele Morrone"></a>
+      <div class="info">
+        <h2>Michele Morrone</h2>
+        <p>10 releases on 477 Records<br>Latest: Illusion (feat. Michele Morrone) (2026)</p>
+        <p class="links"><a class="under" href="https://open.spotify.com/artist/03fLoIOO015incUitpfkad" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="releases.html#michele-morrone">See releases</a></p>
+      </div>
+    </li>
+    <li class="card" id="brothel">
+      <a class="shot" href="#brothel" aria-label="Brothel"><img src="assets/brothel.jpg" width="640" height="800" alt="Brothel"></a>
+      <div class="info">
+        <h2>Brothel</h2>
+        <p>2 releases on 477 Records<br>Latest: tuesdaynight. (2026)</p>
+        <p class="links"><a class="under" href="https://open.spotify.com/artist/3xYvvJ6tjXyJJdEXBs8qf0" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="releases.html#brothel">See releases</a></p>
+      </div>
+    </li>
+    <li class="card" id="bec-lauder-and-the-noise">
+      <a class="shot" href="#bec-lauder-and-the-noise" aria-label="Bec Lauder and the Noise"><img src="assets/bec.jpg" width="640" height="800" alt="Bec Lauder and the Noise"></a>
+      <div class="info">
+        <h2>Bec Lauder and the Noise</h2>
+        <p>4 releases on 477 Records<br>Latest: Before Everything Changes (2023)</p>
+        <p class="links"><a class="under" href="https://open.spotify.com/artist/5Wl79QF98JiagVPHNOl8g6" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="releases.html#bec-lauder-and-the-noise">See releases</a></p>
+      </div>
+    </li>
+  </ol>
+</main>
+<script>
+(function () {
+  var cards = [].slice.call(document.querySelectorAll('.card')), ticking = false;
+  function pick() {
+    ticking = false;
+    var mid = innerHeight / 2 + 20, best = null, gap = 1e9;
+    cards.forEach(function (c) {
+      var r = c.getBoundingClientRect(), g = Math.abs(r.top + r.height / 2 - mid);
+      if (g < gap) { gap = g; best = c; }
+    });
+    cards.forEach(function (c) { c.classList.toggle('active', c === best); });
+  }
+  function centre(c, smooth) {
+    var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    c.scrollIntoView({ block: 'center', behavior: smooth && !calm ? 'smooth' : 'auto' });
+  }
+  addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(pick); } }, { passive: true });
+  addEventListener('resize', pick);
+  cards.forEach(function (c) {
+    c.querySelector('.shot').addEventListener('click', function (ev) { ev.preventDefault(); centre(c, true); history.replaceState(null, '', '#' + c.id); });
+  });
+  var start = location.hash && document.getElementById(location.hash.slice(1));
+  if (start) centre(start, false);
+  pick();
+})();
+</script>
+<footer class="foot pad">
+  <span>© 2026 477 Records</span>
+  <a href="mailto:gd@477records.com">gd@477records.com</a>
+</footer>
+</body>
+</html>

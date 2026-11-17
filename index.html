@@ -6,243 +6,71 @@
 <title>477 Records</title>
 <meta name="description" content="477 Records is an independent label for independent artists, founded by Two Feet in 2024.">
 <meta property="og:title" content="477 Records">
-<meta property="og:description" content="An independent label for independent artists.">
+<meta property="og:description" content="477 Records is an independent label for independent artists, founded by Two Feet in 2024.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.477records.com/">
 <meta property="og:image" content="https://www.477records.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#edf0eb">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
-<link rel="preload" as="image" href="assets/tape.webp">
-<style>
-:root {
-  --paper: #edf0eb;
-  --ink: #14162a;
-  --ink-soft: #5b5e6c;
-  --line: rgba(20, 22, 42, .14);
-  --tape: #e6e4c4;
-  --gutter: clamp(20px, 4.4vw, 64px);
-  --max: 1320px;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-/* paper grain, as in the logo artwork */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 10;
-  opacity: .22;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' seed='12'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 -.2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; }
-a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 2px; }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
-
-/* header */
-.top {
-  position: sticky; top: 0; z-index: 5;
-  background: color-mix(in srgb, var(--paper) 86%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.top .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
-.top a { text-decoration: none; font-weight: 700; letter-spacing: -.02em; }
-.top nav { display: flex; gap: clamp(18px, 3vw, 36px); }
-.top nav a { font-weight: 500; font-size: 15px; letter-spacing: -.01em; }
-.top nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
-
-/* hero */
-.hero .wrap {
-  min-height: calc(100svh - 60px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: var(--gutter);
-  align-items: end;
-  padding-top: clamp(32px, 7vh, 96px);
-  padding-bottom: clamp(40px, 8vh, 96px);
-}
-.lockup { align-self: center; max-width: 600px; width: 100%; margin: 0; }
-.lockup .tape { width: 100%; height: auto; transform-origin: 12% 50%; }
-.lockup .mark { width: 58%; margin: 1.5% 0 0 5.5%; }
-.pitch h1 {
-  margin: 0 0 .5em;
-  font-size: clamp(34px, 4.5vw, 64px);
-  line-height: 1.02;
-  letter-spacing: -.045em;
-  font-weight: 700;
-  text-wrap: balance;
-}
-.pitch p { margin: 0 0 .7em; max-width: 34em; color: var(--ink-soft); }
-.pitch p:last-child { margin-bottom: 0; }
-
-@media (prefers-reduced-motion: no-preference) {
-  .lockup .tape { animation: stick .9s cubic-bezier(.2, .9, .25, 1) both; }
-  .lockup .mark { animation: rise .7s .25s cubic-bezier(.2, .8, .2, 1) both; }
-  @keyframes stick {
-    from { opacity: 0; transform: translateY(-18px) rotate(-3.5deg) scale(1.04); }
-    to { opacity: 1; transform: none; }
-  }
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: none; }
-  }
-}
-
-/* sections */
-.block { border-top: 1px solid var(--line); scroll-margin-top: 60px; }
-.block .wrap { padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(56px, 8vw, 112px); }
-.block h2 {
-  margin: 0 0 clamp(24px, 3.4vw, 44px);
-  font-size: clamp(28px, 3vw, 40px);
-  line-height: 1.05;
-  letter-spacing: -.04em;
-  font-weight: 700;
-}
-
-/* artists */
-.artists { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); }
-.artists a { display: block; text-decoration: none; }
-.artists .photo { aspect-ratio: 4 / 5; overflow: hidden; background: #d9dcd6; }
-.artists img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.04); transition: filter .35s ease, transform .6s cubic-bezier(.2, .8, .2, 1); }
-.artists a:hover img, .artists a:focus-visible img { filter: none; transform: scale(1.03); }
-.artists .name { display: block; margin-top: 14px; font-size: clamp(18px, 1.6vw, 22px); font-weight: 700; letter-spacing: -.03em; line-height: 1.15; }
-.artists .go { display: block; margin-top: 3px; font-size: 14px; color: var(--ink-soft); }
-.artists a:hover .go { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
-
-/* releases */
-.releases { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); }
-.releases img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #d9dcd6; }
-.releases .title { display: block; margin-top: 12px; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
-.releases .by { display: block; font-size: 14px; color: var(--ink-soft); }
-
-/* contact */
-.contact p { margin: 0 0 10px; color: var(--ink-soft); }
-.contact a {
-  font-size: clamp(30px, 6.6vw, 104px);
-  font-weight: 700;
-  letter-spacing: -.05em;
-  line-height: 1;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-  background: linear-gradient(var(--tape), var(--tape)) no-repeat 0 88% / 0 .34em;
-  transition: background-size .35s cubic-bezier(.2, .8, .2, 1);
-}
-.contact a:hover, .contact a:focus-visible { background-size: 100% .34em; }
-
-footer .wrap { display: flex; justify-content: space-between; gap: 16px; padding-top: 22px; padding-bottom: 28px; font-size: 14px; color: var(--ink-soft); border-top: 1px solid var(--line); }
-
-@media (max-width: 900px) {
-  .hero .wrap { grid-template-columns: 1fr; align-items: start; min-height: 0; gap: 44px; }
-  .lockup { max-width: 440px; }
-  .artists { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 30px; }
-  .releases {
-    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 58%;
-    overflow-x: auto; scroll-snap-type: x mandatory;
-    margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter) 6px; scroll-padding: var(--gutter);
-    scrollbar-width: none;
-  }
-  .releases::-webkit-scrollbar { display: none; }
-  .releases li { scroll-snap-align: start; }
-}
-@media (max-width: 480px) {
-  .top nav a:first-child { display: none; }
-}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-
 <header class="top">
-  <div class="wrap">
-    <a href="#top">477 Records</a>
-    <nav aria-label="Sections">
-      <a href="#artists">Artists</a>
-      <a href="#releases">Releases</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+  <a class="home" href="./">477 Records</a>
+  <nav aria-label="Pages">
+    <a href="roster.html">Roster</a>
+    <a href="releases.html">Releases</a>
+    <a href="./#contact">Contact</a>
+  </nav>
 </header>
-
-<main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <figure class="lockup">
-        <img class="tape" src="assets/tape.webp" width="874" height="329" alt="">
-        <img class="mark" src="assets/wordmark.svg" width="3738" height="1870" alt="477 Records">
-      </figure>
-      <div class="pitch">
-        <h1>An independent label for independent artists</h1>
-        <p>Founded by Two Feet, a platinum-and-gold-certified musician and producer, in 2024, 477 Records grew out of his experience as an independent artist.</p>
-        <p>We find, sign, and develop independent artists and help them develop their sound.</p>
-        <p>We offer the reach and services of a major label while staying independent.</p>
-      </div>
+<main>
+  <section class="hero pad">
+    <figure class="lockup">
+      <img class="tape" src="assets/tape.webp" width="874" height="329" alt="">
+      <img class="mark" src="assets/wordmark.svg" width="3738" height="1870" alt="477 Records">
+    </figure>
+    <div class="pitch">
+      <h1>An independent label for independent artists</h1>
+      <p>Founded by Two Feet, a platinum-and-gold-certified musician and producer, in 2024, 477 Records grew out of his experience as an independent artist.</p>
+      <p>We find, sign, and develop independent artists and help them develop their sound.</p>
+      <p>We offer the reach and services of a major label while staying independent.</p>
     </div>
   </section>
 
-  <section class="block" id="artists">
-    <div class="wrap">
-      <h2>Artists</h2>
-      <ul class="artists">
-        <li><a href="https://open.spotify.com/artist/5sWHDYs0csV6RS48xBl0tH" target="_blank" rel="noopener">
-          <div class="photo"><img src="assets/twofeet.jpg" width="640" height="800" alt="Two Feet" loading="lazy"></div>
-          <span class="name">Two Feet</span><span class="go">Listen on Spotify</span></a></li>
-        <li><a href="https://open.spotify.com/artist/03fLoIOO015incUitpfkad" target="_blank" rel="noopener">
-          <div class="photo"><img src="assets/morrone.jpg" width="640" height="800" alt="Michele Morrone" loading="lazy"></div>
-          <span class="name">Michele Morrone</span><span class="go">Listen on Spotify</span></a></li>
-        <li><a href="https://open.spotify.com/artist/3xYvvJ6tjXyJJdEXBs8qf0" target="_blank" rel="noopener">
-          <div class="photo"><img src="assets/brothel.jpg" width="640" height="800" alt="Brothel" loading="lazy"></div>
-          <span class="name">Brothel</span><span class="go">Listen on Spotify</span></a></li>
-        <li><a href="https://open.spotify.com/artist/5Wl79QF98JiagVPHNOl8g6" target="_blank" rel="noopener">
-          <div class="photo"><img src="assets/bec.jpg" width="640" height="800" alt="Bec Lauder and the Noise" loading="lazy"></div>
-          <span class="name">Bec Lauder and the Noise</span><span class="go">Listen on Spotify</span></a></li>
-      </ul>
-    </div>
+  <section class="sec pad">
+    <div class="sec-head"><h2>Roster</h2><a class="under" href="roster.html">View the roster</a></div>
+    <ul class="tiles people">
+      <li><a href="roster.html#two-feet"><span class="pic"><img src="assets/twofeet.jpg" width="640" height="800" alt="Two Feet" loading="lazy"></span><span class="t">Two Feet</span></a></li>
+      <li><a href="roster.html#michele-morrone"><span class="pic"><img src="assets/morrone.jpg" width="640" height="800" alt="Michele Morrone" loading="lazy"></span><span class="t">Michele Morrone</span></a></li>
+      <li><a href="roster.html#brothel"><span class="pic"><img src="assets/brothel.jpg" width="640" height="800" alt="Brothel" loading="lazy"></span><span class="t">Brothel</span></a></li>
+      <li><a href="roster.html#bec-lauder-and-the-noise"><span class="pic"><img src="assets/bec.jpg" width="640" height="800" alt="Bec Lauder and the Noise" loading="lazy"></span><span class="t">Bec Lauder and the Noise</span></a></li>
+    </ul>
   </section>
 
-  <section class="block" id="releases">
-    <div class="wrap">
-      <h2>Releases</h2>
-      <ul class="releases">
-        <li><img src="assets/cover-tuesday-night.jpg" width="800" height="800" alt="Tuesday Night cover art" loading="lazy">
-          <span class="title">Tuesday Night</span><span class="by">Brothel</span></li>
-        <li><img src="assets/cover-on-the-block.jpg" width="800" height="800" alt="On The Block cover art" loading="lazy">
-          <span class="title">On The Block</span><span class="by">WNTRBRK</span></li>
-        <li><img src="assets/cover-illusion.jpg" width="800" height="800" alt="Illusion cover art" loading="lazy">
-          <span class="title">Illusion</span><span class="by">JONY, Michele Morrone</span></li>
-        <li><img src="assets/cover-two-feet-pt-1.jpg" width="800" height="800" alt="Two Feet (Part 1) cover art" loading="lazy">
-          <span class="title">Two Feet (Part 1)</span><span class="by">Two Feet</span></li>
-      </ul>
-    </div>
+  <section class="sec pad">
+    <div class="sec-head"><h2>Releases</h2><a class="under" href="releases.html">All 38 releases</a></div>
+    <ul class="tiles covers">
+      <li data-tags="two-feet"><a href="https://music.apple.com/us/album/two-feet-part-2/6830265942" target="_blank" rel="noopener"><span class="pic"><img src="assets/r/6830265942.jpg" width="500" height="500" alt="" loading="lazy"></span><span class="t">Two Feet (Part 2)</span><span class="s">Two Feet</span><span class="d"><span class="soon">Out Dec 25</span></span></a></li>
+      <li data-tags="two-feet"><a href="https://music.apple.com/us/album/i-can-smell-them-on-your-dress-single/6821166518" target="_blank" rel="noopener"><span class="pic"><img src="assets/r/6821166518.jpg" width="500" height="500" alt="" loading="lazy"></span><span class="t">I can smell them on your dress</span><span class="s">Two Feet</span><span class="d">Oct 2026</span></a></li>
+      <li data-tags="two-feet"><a href="https://music.apple.com/us/album/i-dont-think-you-love-me-single/6817088695" target="_blank" rel="noopener"><span class="pic"><img src="assets/r/6817088695.jpg" width="500" height="500" alt="" loading="lazy"></span><span class="t">I don&#x27;t think you love me</span><span class="s">Two Feet</span><span class="d">Oct 2026</span></a></li>
+      <li data-tags="two-feet"><a href="https://music.apple.com/us/album/p2-overture-single/6811139673" target="_blank" rel="noopener"><span class="pic"><img src="assets/r/6811139673.jpg" width="500" height="500" alt="" loading="lazy"></span><span class="t">P2 Overture</span><span class="s">Two Feet</span><span class="d">Oct 2026</span></a></li>
+      <li data-tags="brothel"><a href="https://music.apple.com/us/album/tuesdaynight-single/6803591125" target="_blank" rel="noopener"><span class="pic"><img src="assets/r/6803591125.jpg" width="500" height="500" alt="" loading="lazy"></span><span class="t">tuesdaynight.</span><span class="s">Brothel</span><span class="d">Sep 2026</span></a></li>
+      <li data-tags="wntrbrk"><a href="https://music.apple.com/us/album/on-the-block-single/6808036597" target="_blank" rel="noopener"><span class="pic"><img src="assets/r/6808036597.jpg" width="500" height="500" alt="" loading="lazy"></span><span class="t">On The Block</span><span class="s">WNTRBRK</span><span class="d">Sep 2026</span></a></li>
+      <li data-tags="michele-morrone"><a href="https://music.apple.com/us/album/illusion-feat-michele-morrone-single/6807471017" target="_blank" rel="noopener"><span class="pic"><img src="assets/r/6807471017.jpg" width="500" height="500" alt="" loading="lazy"></span><span class="t">Illusion (feat. Michele Morrone)</span><span class="s">JONY</span><span class="d">Sep 2026</span></a></li>
+      <li data-tags="two-feet"><a href="https://music.apple.com/us/album/two-feet-part-1-ep/6802684644" target="_blank" rel="noopener"><span class="pic"><img src="assets/r/6802684644.jpg" width="500" height="500" alt="" loading="lazy"></span><span class="t">Two Feet (Part 1)</span><span class="s">Two Feet</span><span class="d">Sep 2026</span></a></li>
+    </ul>
   </section>
 
-  <section class="block contact" id="contact">
-    <div class="wrap">
-      <p>Reach out for information</p>
-      <a href="mailto:gd@477records.com">gd@477records.com</a>
-    </div>
+  <section class="contact pad" id="contact">
+    <p>Reach out for information</p>
+    <a href="mailto:gd@477records.com">gd@477records.com</a>
   </section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <span>© 2026 477 Records</span>
-    <span>Independent since 2024</span>
-  </div>
+<footer class="foot pad">
+  <span>© 2026 477 Records</span>
+  <a href="mailto:gd@477records.com">gd@477records.com</a>
 </footer>
-
 </body>
 </html>
