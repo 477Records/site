@@ -101,44 +101,16 @@ people = "\n".join(
     f'alt="{e(a["name"])}" loading="lazy"></span><span class="t">{e(a["name"])}</span></a></li>'
     for a in ARTISTS)
 latest = "\n".join("      " + cover_li(r) for r in releases[:8])
-
-# hero wall: artist photos mixed into recent covers, dealt across three columns
-_covers = [f'<img src="assets/r/{r["id"]}.jpg" width="500" height="500" alt="">' for r in releases[:14]]
-_photos = [f'<img src="assets/{a["img"]}" width="640" height="800" alt="">' for a in ARTISTS]
-_mix = []
-for i, c in enumerate(_covers):
-    if i % 4 == 1 and _photos:
-        _mix.append(_photos.pop(0))
-    _mix.append(c)
-_cols = [_mix[i::3] for i in range(3)]
-wall = "\n".join(
-    '        <div class="wall-col"><div class="wall-track">' + "".join(col + col) + "</div></div>"
-    for col in _cols)
 page("index.html", "477 Records",
      "477 Records is an independent label for independent artists, founded by Two Feet in 2024.",
      f"""<main>
-  <section class="hero">
-    <div class="hero-left">
-      <figure class="lockup">
-        <img class="tape" src="assets/tape.webp" width="874" height="329" alt="">
-        <img class="mark" src="assets/wordmark.svg" width="3738" height="1870" alt="477 Records">
-      </figure>
-      <div class="hero-foot">
-        <a href="roster.html">Roster +</a>
-        <h1>An independent label<br>for independent artists</h1>
-        <span>Est. 2024</span>
-      </div>
-    </div>
-    <div class="wall" aria-hidden="true">
-      <div class="wall-cols">
-{wall}
-      </div>
-    </div>
-  </section>
-
-  <section class="sec pad about">
-    <h2>We find, sign, and develop independent artists</h2>
-    <div>
+  <section class="hero pad">
+    <figure class="lockup">
+      <img class="tape" src="assets/tape.webp" width="874" height="329" alt="">
+      <img class="mark" src="assets/wordmark.svg" width="3738" height="1870" alt="477 Records">
+    </figure>
+    <div class="pitch">
+      <h1>An independent label for independent artists</h1>
       <p>Founded by Two Feet, a platinum-and-gold-certified musician and producer, in 2024, 477 Records grew out of his experience as an independent artist.</p>
       <p>We find, sign, and develop independent artists and help them develop their sound.</p>
       <p>We offer the reach and services of a major label while staying independent.</p>
