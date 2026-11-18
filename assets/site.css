@@ -131,7 +131,13 @@ main { padding-top: var(--head); }
   transition: background-size .35s cubic-bezier(.2, .8, .2, 1);
 }
 .contact a:hover, .contact a:focus-visible { background-size: 100% .34em; }
-.foot { display: flex; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 18px; font-size: 15px; color: var(--soft); position: relative; z-index: 2; }
+.foot { padding-top: 14px; padding-bottom: 18px; font-size: 15px; color: var(--soft); position: relative; z-index: 2; background: var(--paper); }
+.foot-row { display: flex; justify-content: space-between; gap: 16px; }
+.about { display: grid; grid-template-columns: 96px minmax(0, 520px); gap: var(--g); padding: 18px 0 clamp(36px, 5vw, 64px); border-top: 1px solid var(--line); }
+.about h2 { margin: 0; font-size: 15px; font-weight: 400; color: var(--ink); }
+.about p { margin: 0 0 8px; line-height: 1.45; }
+.about p:first-child { color: var(--ink); }
+.about p:last-child { margin: 0; }
 .foot a { text-decoration: none; }
 .foot a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -201,6 +207,7 @@ main { padding-top: var(--head); }
   .card .info { opacity: 1; transform: none; pointer-events: auto; }
 
   .controls { grid-template-columns: 1fr; gap: 22px; }
+  .about { grid-template-columns: 1fr; gap: 8px; }
   .works.list li { grid-template-columns: 1fr; gap: 0; padding-bottom: 8px; }
   .works.list .art { grid-template-columns: 44px minmax(0, 1fr) auto; gap: 12px; }
   .works.list .listen { padding-left: 56px; }

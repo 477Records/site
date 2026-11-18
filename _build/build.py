@@ -129,8 +129,18 @@ def page(name, title, desc, body, current=""):
 </script>
 {body}
 <footer class="foot pad">
-  <span>© 2026 477 Records</span>
-  <a href="mailto:gd@477records.com">gd@477records.com</a>
+  <section class="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <div>
+      <p>477 Records is a New York-based independent record label.</p>
+      <p>Founded by Two Feet, a platinum-and-gold-certified musician and producer, in 2024, 477 Records grew out of his experience as an independent artist.</p>
+      <p>We find, sign, and develop independent artists and help them develop their sound. We offer the reach and services of a major label while staying independent.</p>
+    </div>
+  </section>
+  <div class="foot-row">
+    <span>© 2026 477 Records</span>
+    <a href="mailto:gd@477records.com">gd@477records.com</a>
+  </div>
 </footer>
 </body>
 </html>
