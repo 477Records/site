@@ -152,7 +152,7 @@ people = "\n".join(
 latest = "\n".join("      " + cover_li(r) for r in releases[:8])
 page("index.html", "477 Records",
      "477 Records is a New York-based independent record label.",
-     f"""<main>
+     f"""<main class="home">
   <section class="hero pad">
     <figure class="lockup">
       <img class="tape" src="assets/tape.webp" width="874" height="329" alt="">
