@@ -14,10 +14,11 @@ def walk(o):
         for v in o.values(): yield from walk(v)
     elif isinstance(o, list):
         for v in o: yield from walk(v)
+empty = 0
 for r in rels:
     k = str(r["id"])
     if done.get(k): continue
-    title = clean(r["title"]); first = re.split(r",|&| x ", r["artist"])[0].strip()
+    title = clean(r["title"]); first = re.split(r",|&| x | and ", r["artist"])[0].strip()
     q = f"{first} {title}"
     req = urllib.request.Request("https://www.youtube.com/results?search_query=" + urllib.parse.quote(q),
         headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -36,4 +37,6 @@ for r in rels:
     done[k] = hit
     print("ok  " if hit else "MISS", q, "" if hit else seen[:3], flush=True)
     json.dump(done, open(OUT, "w"), indent=0)
-    time.sleep(0.4)
+    time.sleep(2.5)
+    empty = 0 if seen else empty + 1
+    if empty >= 6: print('STOP: YouTube returning empty pages'); break
