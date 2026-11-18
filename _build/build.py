@@ -151,7 +151,7 @@ people = "\n".join(
     for a in ARTISTS)
 latest = "\n".join("      " + cover_li(r) for r in releases[:8])
 page("index.html", "477 Records",
-     "Founded in 2024, 477 Records is a New York-based independent record label.",
+     "477 Records is a New York-based independent record label.",
      f"""<main>
   <section class="hero pad">
     <figure class="lockup">
@@ -159,8 +159,7 @@ page("index.html", "477 Records",
       <img class="mark" src="assets/wordmark.svg" width="3738" height="1870" alt="477 Records">
     </figure>
     <div class="pitch">
-      <h1>Founded in 2024</h1>
-      <p>477 Records is a New York-based independent record label.</p>
+      <h1>477 Records is a New York-based independent record label.</h1>
     </div>
   </section>
 
