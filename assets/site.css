@@ -48,6 +48,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   padding: 0 var(--g);
   background: var(--paper);
 }
+/* cover the strip above the header (phone status bar, overscroll) so content never shows through */
+.top::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 300px; background: var(--paper); }
 .top a { text-decoration: none; }
 .top .home { font-weight: 700; letter-spacing: -.02em; }
 .top nav { display: flex; gap: clamp(14px, 1.6vw, 22px); }
