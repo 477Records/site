@@ -166,7 +166,9 @@ main { padding-top: var(--head); }
   .hero { grid-template-columns: 1fr; align-items: start; min-height: 0; gap: 40px; padding-bottom: 8px; }
   .lockup { width: min(100%, 420px); }
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tiles.people { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tiles.people { display: flex; gap: 4px; grid-template-columns: none; margin: 0 calc(-1 * var(--g)); padding: 0 var(--g); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: var(--g); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .tiles.people::-webkit-scrollbar { display: none; }
+  .tiles.people li { flex: 0 0 44%; scroll-snap-align: start; }
   .tiles .listen { gap: 2px 10px; font-size: 13px; }
   .tiles .listen .lg { display: none; }
   .works.list .listen { font-size: 14px; gap: 2px 14px; }
