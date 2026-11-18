@@ -123,7 +123,7 @@ people = "\n".join(
     for a in ARTISTS)
 latest = "\n".join("      " + cover_li(r) for r in releases[:8])
 page("index.html", "477 Records",
-     "477 Records is an independent label founded by Two Feet in 2024.",
+     "Founded in 2024, 477 Records is a New York-based independent record label.",
      f"""<main>
   <section class="hero pad">
     <figure class="lockup">
@@ -131,10 +131,7 @@ page("index.html", "477 Records",
       <img class="mark" src="assets/wordmark.svg" width="3738" height="1870" alt="477 Records">
     </figure>
     <div class="pitch">
-      <h1>Started by an artist who&rsquo;s been on both sides of a record deal</h1>
-      <p>Two Feet founded 477 Records in 2024, after releasing platinum and gold records through a major label and on his own.</p>
-      <p>We sign artists early and work on the music with them, not just the rollout.</p>
-      <p>Then we handle the release: distribution, marketing and ads, at the scale a major would.</p>
+      <h1>Founded in 2024, 477 Records is a New York-based independent record label.</h1>
     </div>
   </section>
 
