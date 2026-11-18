@@ -8,6 +8,7 @@ import datetime
 import html
 import json
 import os
+import urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -22,9 +23,11 @@ ARTISTS = [
          spotify="https://open.spotify.com/artist/3xYvvJ6tjXyJJdEXBs8qf0"),
     dict(slug="bec-lauder-and-the-noise", name="Bec Lauder and the Noise", match="bec lauder", img="bec.jpg",
          spotify="https://open.spotify.com/artist/5Wl79QF98JiagVPHNOl8g6"),
+    dict(slug="wntrbrk", name="WNTRBRK", match="wntrbrk", img="wntrbrk.jpg",
+         spotify="https://open.spotify.com/artist/75trH1P5A8F6DZV4gB2SDN"),
 ]
 # extra filter names on the releases page (artists with a release but no roster entry)
-EXTRA_FILTERS = [dict(slug="wntrbrk", name="WNTRBRK", match="wntrbrk")]
+EXTRA_FILTERS = []
 
 e = html.escape
 import hashlib
@@ -87,12 +90,28 @@ def page(name, title, desc, body, current=""):
     open(os.path.join(ROOT, name), "w").write(doc)
 
 
+LINKS_P = os.path.join(HERE, "links.json")   # {apple id: {"spotify": url, "youtube": url}}
+LINKS = json.load(open(LINKS_P)) if os.path.exists(LINKS_P) else {}
+
+
+def listen(r):
+    """Spotify / Apple Music / YouTube links for one release. Falls back to a search link once it is out."""
+    got = LINKS.get(str(r["id"]), {})
+    out_now = r["date"] <= TODAY
+    q = urllib.parse.quote(r["artist"].split(",")[0].split("&")[0].strip() + " " + r["title"])
+    sp = got.get("spotify") or (out_now and "https://open.spotify.com/search/" + q)
+    yt = got.get("youtube") or (out_now and "https://www.youtube.com/results?search_query=" + q)
+    return [(n, u) for n, u in (("Spotify", sp), ("Apple Music", r["apple"]), ("YouTube", yt)) if u]
+
+
 def cover_li(r, eager=False):
     load = "" if eager else ' loading="lazy"'
-    return (f'<li data-tags="{" ".join(tags(r))}"><a href="{e(r["apple"])}" target="_blank" rel="noopener">'
+    ls = listen(r)
+    where = "".join(f'<a href="{e(u)}" target="_blank" rel="noopener" aria-label="{e(r["title"])} on {n}">{n}</a>' for n, u in ls)
+    return (f'<li data-tags="{" ".join(tags(r))}"><a class="art" href="{e(ls[0][1])}" target="_blank" rel="noopener">'
             f'<span class="pic"><img src="assets/r/{r["id"]}.jpg" width="500" height="500" alt=""{load}></span>'
             f'<span class="t">{e(r["title"])}</span><span class="s">{e(r["artist"])}</span>'
-            f'<span class="d">{nice_date(r)}</span></a></li>')
+            f'<span class="d">{nice_date(r)}</span></a><span class="listen">{where}</span></li>')
 
 
 # ---------- home ----------
