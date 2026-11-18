@@ -31,6 +31,16 @@ ARTISTS = [
 # extra filter names on the releases page (artists with a release but no roster entry)
 EXTRA_FILTERS = []
 
+# short roster bios (WNTRBRK's is his own press bio; the rest are written from public sources)
+BIOS = {
+    "two-feet": "Two Feet is New York singer, guitarist and producer Bill Dess. \u201cGo Fuck Yourself\u201d and \u201cI Feel Like I\u2019m Drowning\u201d are both certified Gold, and the latter reached No. 1 on Billboard\u2019s Alternative Songs chart in 2018. He founded 477 Records.",
+    "michele-morrone": "Michele Morrone is an Italian actor and singer-songwriter from Bitonto, known worldwide for 365 Days. His albums are Dark Room (2020) and Double (2023). He signed to 477 Records in 2024.",
+    "brothel": "Brothel is an electronic producer who has been releasing music since 2016. He is known for \u201cTimmy Turner\u201d, \u201cSlide\u201d with barnacle boi, and a long run of collaborations with Sidewalks and Skeletons.",
+    "bec-lauder-and-the-noise": "Bec Lauder and the Noise are a New York glam-punk trio: Bec Lauder on vocals and guitar, Maggie Bishop on drums and Soph Shreds on guitar. Their 477 releases include \u201cHard To Get\u201d, \u201cMore Than Chemical\u201d and the EP Before Everything Changes.",
+    "toby-mai": "Toby Mai is a producer and singer-songwriter who blends R&B and electronic music with jazz progressions and bass-heavy production. His 477 releases run from \u201cCities\u201d with Two Feet through \u201c19\u201d.",
+    "wntrbrk": "WNTRBRK is a Paterson, New Jersey artist building a raw, emotionally charged world where alternative music, R&B, hip-hop, and rock influences collide. Known for guitar-driven performances and an intimate, unfiltered approach to songwriting, his music moves between vulnerable, melodic moments and intense, mosh-pit energy.",
+}
+
 e = html.escape
 import hashlib
 CSS_V = hashlib.md5(open(os.path.join(ROOT, "assets", "site.css"), "rb").read()).hexdigest()[:8]
@@ -199,6 +209,7 @@ for a in ARTISTS:
       <a class="shot" href="#{a["slug"]}" aria-label="{e(a["name"])}"><img src="assets/{a["img"]}" width="640" height="800" alt="{e(a["name"])}"></a>
       <div class="info">
         <h2>{e(a["name"])}</h2>
+        <p class="bio">{e(BIOS.get(a["slug"], ""))}</p>
         <p class="links"><a class="under" href="{a["spotify"]}" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="releases.html#{a["slug"]}">See releases</a></p>
       </div>
     </li>""")

@@ -146,6 +146,13 @@ main { padding-top: var(--head); }
 .card p { margin: 0; font-size: 16px; }
 .card .more { margin-top: 16px; }
 .card .links { margin-top: 10px; display: flex; gap: 14px; }
+.card .bio { margin: 0; font-size: 14px; line-height: 1.4; color: var(--soft); text-wrap: pretty; }
+@media (min-width: 861px) {
+  /* info floats beside the portrait so bios never change the spacing of the reel */
+  .card { position: relative; }
+  .card .info { position: absolute; top: 50%; left: calc(clamp(150px, 15.4vw, 250px) + clamp(14px, 1.7vw, 26px)); width: min(340px, calc(100% - clamp(150px, 15.4vw, 250px) - 40px)); max-width: none; transform: translate(-6px, -50%); }
+  .card.active .info { transform: translate(0, -50%); }
+}
 
 /* releases page */
 .works-head { padding-top: clamp(40px, 7vw, 110px); }
@@ -186,7 +193,7 @@ main { padding-top: var(--head); }
 
   .roster-word { position: static; transform: none; padding: clamp(28px, 8vw, 60px) var(--g) 28px; font-size: clamp(64px, 20vw, 120px); }
   .reel { margin: 0; padding: 0 var(--g) 40px; }
-  .card { grid-template-columns: 42% minmax(0, 1fr); margin-bottom: 14px; }
+  .card { grid-template-columns: 38% minmax(0, 1fr); align-items: start; margin-bottom: 22px; }
   .card .shot { width: 100%; }
   .card .info { opacity: 1; transform: none; pointer-events: auto; }
 
