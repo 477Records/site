@@ -167,6 +167,11 @@ main { padding-top: var(--head); }
   .lockup { width: min(100%, 420px); }
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tiles.people { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tiles .listen { gap: 2px 10px; font-size: 13px; }
+  .tiles .listen .lg { display: none; }
+  .works.list .listen { font-size: 14px; gap: 2px 14px; }
+  .works.list .listen .lg { display: inline; }
+  .card .links { flex-direction: column; gap: 4px; }
   .sec-head h2 { font-size: clamp(44px, 14vw, 80px); }
 
   .roster-word { position: static; transform: none; padding: clamp(28px, 8vw, 60px) var(--g) 28px; font-size: clamp(64px, 20vw, 120px); }

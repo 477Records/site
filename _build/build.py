@@ -106,10 +106,14 @@ def listen(r):
     return [(n, u) for n, u in (("Spotify", sp), ("Apple Music", r["apple"]), ("YouTube", yt)) if u]
 
 
+def short(n):
+    return n.replace(" Music", '<span class="lg"> Music</span>')
+
+
 def cover_li(r, eager=False):
     load = "" if eager else ' loading="lazy"'
     ls = listen(r)
-    where = "".join(f'<a href="{e(u)}" target="_blank" rel="noopener" aria-label="{e(r["title"])} on {n}">{n}</a>' for n, u in ls)
+    where = "".join(f'<a href="{e(u)}" target="_blank" rel="noopener" aria-label="{e(r["title"])} on {n}">{short(n)}</a>' for n, u in ls)
     return (f'<li data-tags="{" ".join(tags(r))}"><a class="art" href="{e(ls[0][1])}" target="_blank" rel="noopener">'
             f'<span class="pic"><img src="assets/r/{r["id"]}.jpg" width="500" height="500" alt=""{load}></span>'
             f'<span class="t">{e(r["title"])}</span><span class="s">{e(r["artist"])}</span>'
