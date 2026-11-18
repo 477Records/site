@@ -41,6 +41,18 @@ BIOS = {
     "wntrbrk": "WNTRBRK is a Paterson, New Jersey artist building a raw, emotionally charged world where alternative music, R&B, hip-hop, and rock influences collide. Known for guitar-driven performances and an intimate, unfiltered approach to songwriting, his music moves between vulnerable, melodic moments and intense, mosh-pit energy.",
 }
 
+# LIVE=1 python3 _build/build.py  -> build for www.477records.com (indexable, canonical links, CNAME file).
+# Without it the build is the hidden preview at 477records.github.io/site.
+LIVE = os.environ.get("LIVE") == "1"
+DOMAIN = "www.477records.com"
+
+
+def ROBOTS(name):
+    if not LIVE:
+        return '<meta name="robots" content="noindex">'
+    return f'<link rel="canonical" href="https://{DOMAIN}/{"" if name == "index.html" else name}">'
+
+
 e = html.escape
 import hashlib
 CSS_V = hashlib.md5(open(os.path.join(ROOT, "assets", "site.css"), "rb").read()).hexdigest()[:8]
@@ -77,7 +89,7 @@ def page(name, title, desc, body, current=""):
 <meta property="og:image" content="https://www.477records.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#edf0eb">
-<meta name="robots" content="noindex">
+{ROBOTS(name)}
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="stylesheet" href="assets/site.css?v={CSS_V}">
@@ -312,4 +324,9 @@ page("releases.html", "Releases | 477 Records", "Every release on 477 Records.",
 }})();
 </script>""", current="releases.html")
 
+cname = os.path.join(ROOT, "CNAME")
+if LIVE:
+    open(cname, "w").write(DOMAIN + "\n")
+elif os.path.exists(cname):
+    os.remove(cname)
 print("built 3 pages,", len(releases), "releases")
