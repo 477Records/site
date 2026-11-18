@@ -100,7 +100,7 @@ main { padding-top: var(--head); }
 .tiles .pic { overflow: hidden; background: var(--plate); }
 .tiles .pic img { width: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2, .8, .2, 1), filter .35s ease; }
 .tiles a:hover .pic img, .tiles a:focus-visible .pic img { transform: scale(1.035); }
-.tiles.people { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.tiles.people { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .tiles.people .pic { aspect-ratio: 4 / 5; }
 .tiles.people .pic img { height: 100%; filter: grayscale(1) contrast(1.04); }
 .tiles.people a:hover .pic img, .tiles.people a:focus-visible .pic img { filter: none; }
@@ -168,7 +168,7 @@ main { padding-top: var(--head); }
   .hero { grid-template-columns: 1fr; align-items: start; min-height: 0; gap: 40px; padding-bottom: 8px; }
   .lockup { width: min(100%, 420px); }
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tiles.people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tiles.people { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .sec-head h2 { font-size: clamp(44px, 14vw, 80px); }
 
   .roster-word { position: static; transform: none; padding: clamp(28px, 8vw, 60px) var(--g) 28px; font-size: clamp(64px, 20vw, 120px); }

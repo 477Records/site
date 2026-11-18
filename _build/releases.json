@@ -196,6 +196,13 @@
   "apple": "https://music.apple.com/us/album/in-my-head-single/1779157967"
  },
  {
+  "id": 1774349650,
+  "title": "19",
+  "artist": "Toby Mai",
+  "date": "2024-10-25",
+  "apple": "https://music.apple.com/us/album/19-single/1774349650"
+ },
+ {
   "id": 1767678586,
   "title": "Leave Me (feat. Two Feet)",
   "artist": "Michele Morrone",
@@ -208,6 +215,20 @@
   "artist": "Brothel",
   "date": "2024-09-27",
   "apple": "https://music.apple.com/us/album/missme-single/6801247550"
+ },
+ {
+  "id": 1763328542,
+  "title": "Never Coming Home",
+  "artist": "Toby Mai",
+  "date": "2024-09-13",
+  "apple": "https://music.apple.com/us/album/never-coming-home-single/1763328542"
+ },
+ {
+  "id": 1762443039,
+  "title": "Show the World",
+  "artist": "Toby Mai",
+  "date": "2024-09-06",
+  "apple": "https://music.apple.com/us/album/show-the-world-single/1762443039"
  },
  {
   "id": 6801247460,
@@ -224,11 +245,32 @@
   "apple": "https://music.apple.com/us/album/darling-im-on-your-side-single/1757641635"
  },
  {
+  "id": 1757642975,
+  "title": "Like I Did",
+  "artist": "Toby Mai",
+  "date": "2024-08-02",
+  "apple": "https://music.apple.com/us/album/like-i-did-single/1757642975"
+ },
+ {
   "id": 1749088988,
   "title": "Hitachi Vibe",
   "artist": "Two Feet",
   "date": "2024-06-28",
   "apple": "https://music.apple.com/us/album/hitachi-vibe-single/1749088988"
+ },
+ {
+  "id": 1749388225,
+  "title": "Burning",
+  "artist": "Toby Mai",
+  "date": "2024-06-28",
+  "apple": "https://music.apple.com/us/album/burning-single/1749388225"
+ },
+ {
+  "id": 1743263905,
+  "title": "Crawling",
+  "artist": "Toby Mai",
+  "date": "2024-06-21",
+  "apple": "https://music.apple.com/us/album/crawling-single/1743263905"
  },
  {
   "id": 1746216715,
@@ -252,6 +294,13 @@
   "apple": "https://music.apple.com/us/album/falling-to-pieces-single/1730609425"
  },
  {
+  "id": 1726079814,
+  "title": "Didn't Know",
+  "artist": "Toby Mai",
+  "date": "2024-02-09",
+  "apple": "https://music.apple.com/us/album/didnt-know-single/1726079814"
+ },
+ {
   "id": 6801261623,
   "title": "screams",
   "artist": "Brothel",
@@ -264,6 +313,20 @@
   "artist": "Two Feet",
   "date": "2023-12-15",
   "apple": "https://music.apple.com/us/album/kill-anyone-feat-ari-abdul-single/1717684675"
+ },
+ {
+  "id": 1717180924,
+  "title": "MY EYE$",
+  "artist": "Toby Mai",
+  "date": "2023-12-15",
+  "apple": "https://music.apple.com/us/album/my-eye%24-single/1717180924"
+ },
+ {
+  "id": 1713190618,
+  "title": "$TONED",
+  "artist": "Toby Mai",
+  "date": "2023-11-17",
+  "apple": "https://music.apple.com/us/album/%24toned-single/1713190618"
  },
  {
   "id": 6801261676,

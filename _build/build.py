@@ -23,6 +23,8 @@ ARTISTS = [
          spotify="https://open.spotify.com/artist/3xYvvJ6tjXyJJdEXBs8qf0"),
     dict(slug="bec-lauder-and-the-noise", name="Bec Lauder and the Noise", match="bec lauder", img="bec.jpg",
          spotify="https://open.spotify.com/artist/5Wl79QF98JiagVPHNOl8g6"),
+    dict(slug="toby-mai", name="Toby Mai", match="toby mai", img="tobymai.jpg",
+         spotify="https://open.spotify.com/artist/71XRExAcKFmzM0fckCrCvo"),
     dict(slug="wntrbrk", name="WNTRBRK", match="wntrbrk", img="wntrbrk.jpg",
          spotify="https://open.spotify.com/artist/75trH1P5A8F6DZV4gB2SDN"),
 ]
@@ -121,7 +123,7 @@ people = "\n".join(
     for a in ARTISTS)
 latest = "\n".join("      " + cover_li(r) for r in releases[:8])
 page("index.html", "477 Records",
-     "477 Records is an independent label for independent artists, founded by Two Feet in 2024.",
+     "477 Records is an independent label founded by Two Feet in 2024.",
      f"""<main>
   <section class="hero pad">
     <figure class="lockup">
@@ -129,10 +131,10 @@ page("index.html", "477 Records",
       <img class="mark" src="assets/wordmark.svg" width="3738" height="1870" alt="477 Records">
     </figure>
     <div class="pitch">
-      <h1>An independent label for independent artists</h1>
-      <p>Founded by Two Feet, a platinum-and-gold-certified musician and producer, in 2024, 477 Records grew out of his experience as an independent artist.</p>
-      <p>We find, sign, and develop independent artists and help them develop their sound.</p>
-      <p>We offer the reach and services of a major label while staying independent.</p>
+      <h1>Started by an artist who&rsquo;s been on both sides of a record deal</h1>
+      <p>Two Feet founded 477 Records in 2024, after releasing platinum and gold records through a major label and on his own.</p>
+      <p>We sign artists early and work on the music with them, not just the rollout.</p>
+      <p>Then we handle the release: distribution, marketing and ads, at the scale a major would.</p>
     </div>
   </section>
 
