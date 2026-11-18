@@ -102,7 +102,7 @@ def page(name, title, desc, body, current=""):
   </nav>
   <div class="menu-foot">
     <a href="mailto:gd@477records.com">gd@477records.com</a>
-    <img src="assets/wordmark.svg" width="3738" height="1870" alt="">
+    <img src="assets/wordmark.svg?v=2" width="3790" height="1870" alt="">
   </div>
 </div>
 <script>
@@ -166,7 +166,7 @@ page("index.html", "477 Records",
   <section class="hero pad">
     <figure class="lockup">
       <img class="tape" src="assets/tape.webp" width="874" height="329" alt="">
-      <img class="mark" src="assets/wordmark.svg" width="3738" height="1870" alt="477 Records">
+      <img class="mark" src="assets/wordmark.svg?v=2" width="3790" height="1870" alt="477 Records">
     </figure>
     <div class="pitch">
       <h1>477 Records is a New York&#8209;based independent record label.</h1>

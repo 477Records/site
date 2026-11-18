@@ -78,7 +78,7 @@ main { padding-top: var(--head); }
 }
 .lockup { align-self: center; width: min(100%, 620px); margin: 0; }
 .lockup .tape { width: 100%; transform-origin: 12% 50%; }
-.lockup .mark { width: 58%; margin: 1.5% 0 0 var(--in); }
+.lockup .mark { width: 58.8%; margin: 1.5% 0 0 var(--in); }
 .hero { grid-template-columns: minmax(0, 1fr) auto; align-items: end; align-content: center; gap: clamp(20px, 2.6vw, 34px); }
 .pitch { max-width: 300px; justify-self: end; padding-bottom: var(--drop, 0px); }
 /* home: everything below lines up with the wordmark's left edge */
