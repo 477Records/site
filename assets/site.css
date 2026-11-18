@@ -79,7 +79,8 @@ main { padding-top: var(--head); }
 .lockup { align-self: center; width: min(100%, 620px); margin: 0; }
 .lockup .tape { width: 100%; transform-origin: 12% 50%; }
 .lockup .mark { width: 58%; margin: 1.5% 0 0 5.5%; }
-.pitch { max-width: 420px; }
+.hero { grid-template-columns: minmax(0, 1fr); align-items: start; align-content: center; gap: clamp(20px, 2.6vw, 34px); }
+.pitch { max-width: 420px; margin-left: calc(min(100%, 620px) * .055); }
 .pitch h1 { margin: 0; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.25; letter-spacing: -.015em; font-weight: 400; text-wrap: balance; }
 .pitch p { margin: 0 0 8px; color: var(--soft); }
 .pitch p:last-child { margin: 0; }
@@ -165,8 +166,9 @@ main { padding-top: var(--head); }
 .works-end { height: clamp(56px, 8vw, 120px); }
 
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; align-items: start; min-height: 0; gap: 40px; padding-bottom: 8px; }
+  .hero { min-height: 0; gap: 28px; padding-bottom: 8px; }
   .lockup { width: min(100%, 420px); }
+  .pitch { margin-left: calc(min(100%, 420px) * .055); }
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tiles.people { display: flex; gap: 4px; grid-template-columns: none; margin: 0 calc(-1 * var(--g)); padding: 0 var(--g); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: var(--g); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .tiles.people::-webkit-scrollbar { display: none; }
