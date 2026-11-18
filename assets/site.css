@@ -113,8 +113,8 @@ main { padding-top: var(--head); }
 .contact { padding-top: clamp(64px, 10vw, 150px); padding-bottom: clamp(40px, 6vw, 90px); }
 .contact p { margin: 0 0 8px; color: var(--soft); }
 .contact a {
-  font-size: clamp(30px, 7.6vw, 122px);
-  font-weight: 700; letter-spacing: -.06em; line-height: 1;
+  font-size: clamp(26px, 3.4vw, 52px);
+  font-weight: 700; letter-spacing: -.045em; line-height: 1.1;
   text-decoration: none; overflow-wrap: anywhere;
   background: linear-gradient(var(--tape), var(--tape)) no-repeat 0 88% / 0 .34em;
   transition: background-size .35s cubic-bezier(.2, .8, .2, 1);
