@@ -80,7 +80,9 @@ main { padding-top: var(--head); }
 .lockup .tape { width: 100%; transform-origin: 12% 50%; }
 .lockup .mark { width: 58.8%; margin: 1.5% 0 0 var(--in); }
 .hero { grid-template-columns: minmax(0, 1fr) auto; align-items: end; align-content: center; gap: clamp(20px, 2.6vw, 34px); }
-.pitch { max-width: 300px; justify-self: end; padding-bottom: var(--drop, 0px); }
+.pitch { max-width: 300px; justify-self: end; }
+/* sit the last line of the description on the baseline of "Records" (wordmark has 200/1870 of space under its baseline) */
+.pitch h1 { padding-bottom: calc(9.2px - .255em); }
 /* home: everything below lines up with the wordmark's left edge */
 .home { --in: 34px; }
 .home .sec, .home .contact { padding-left: calc(var(--g) + var(--in)); }
@@ -177,7 +179,8 @@ main { padding-top: var(--head); }
 
 @media (max-width: 860px) {
   .hero { grid-template-columns: minmax(0, 1fr); align-items: start; min-height: 0; gap: 28px; padding-bottom: 8px; }
-  .pitch { justify-self: start; margin-left: var(--in); padding-bottom: 0; max-width: 420px; }
+  .pitch { justify-self: start; margin-left: var(--in); max-width: 420px; }
+  .pitch h1 { padding-bottom: 0; }
   .lockup { width: min(100%, 420px); }
   .home { --in: calc(min(100vw - 2 * var(--g), 420px) * .055); }
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
