@@ -80,7 +80,31 @@ def page(name, title, desc, body, current=""):
     {nav("releases.html", "Releases")}
     <a href="./#contact">Contact</a>
   </nav>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
 </header>
+<div class="menu" id="menu" hidden>
+  <div class="menu-top"><a class="home" href="./">477 Records</a><button class="menu-close" type="button" aria-label="Close menu">&times;</button></div>
+  <nav aria-label="Menu">
+    <a href="./">Home</a>
+    <a href="roster.html">Roster</a>
+    <a href="releases.html">Releases</a>
+    <a href="./#contact">Contact</a>
+  </nav>
+  <div class="menu-foot">
+    <a href="mailto:gd@477records.com">gd@477records.com</a>
+    <img src="assets/wordmark.svg" width="3738" height="1870" alt="">
+  </div>
+</div>
+<script>
+(function () {{
+  var m = document.getElementById('menu'), b = document.querySelector('.menu-btn');
+  function set(open) {{ m.hidden = !open; b.setAttribute('aria-expanded', open); document.documentElement.classList.toggle('menu-open', open); }}
+  b.addEventListener('click', function () {{ set(true); }});
+  m.querySelector('.menu-close').addEventListener('click', function () {{ set(false); }});
+  m.addEventListener('click', function (ev) {{ if (ev.target.closest('a')) set(false); }});
+  addEventListener('keydown', function (ev) {{ if (ev.key === 'Escape') set(false); }});
+}})();
+</script>
 {body}
 <footer class="foot pad">
   <span>© 2026 477 Records</span>
@@ -222,7 +246,8 @@ page("releases.html", "Releases | 477 Records", "Every release on 477 Records.",
      f"""<main class="pad">
   <div class="works-head">
     <h1 class="mega">Releases<sup id="count">{len(releases)}</sup></h1>
-    <div class="controls">
+    <button class="filters-toggle" type="button" aria-expanded="true" aria-controls="controls">Close Filters</button>
+    <div class="controls" id="controls">
       <div class="group">
         <span class="label" id="l-artist">Artist</span>
         <ul aria-labelledby="l-artist">
@@ -267,6 +292,11 @@ page("releases.html", "Releases | 477 Records", "Every release on 477 Records.",
     list.classList.toggle('list', b.dataset.view === 'list');
     press(vb, b);
   }}); }});
+  var ft = document.querySelector('.filters-toggle'), head = document.querySelector('.works-head');
+  ft.addEventListener('click', function () {{
+    var shut = head.classList.toggle('shut');
+    ft.textContent = shut ? 'Open Filters' : 'Close Filters'; ft.setAttribute('aria-expanded', !shut);
+  }});
   if (location.hash) filter(location.hash.slice(1));
 }})();
 </script>""", current="releases.html")
