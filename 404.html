@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | 477 Records</title>
+<meta name="description" content="This page does not exist.">
+<base href="/site/">
+<meta property="og:site_name" content="477 Records">
+<meta property="og:title" content="Page not found | 477 Records">
+<meta property="og:description" content="This page does not exist.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.477records.com/404.html">
+<meta property="og:image" content="https://www.477records.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#edf0eb">
+<meta name="robots" content="noindex">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="assets/site.css?v=7f314492">
+</head>
+<body>
+<header class="top">
+  <a class="home" href="./">477 Records</a>
+  <nav aria-label="Pages">
+    <a href="roster.html">Roster</a>
+    <a href="releases.html">Releases</a>
+    <a href="./#contact">Contact</a>
+  </nav>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<div class="menu" id="menu" hidden>
+  <div class="menu-top"><a class="home" href="./">477 Records</a><button class="menu-close" type="button" aria-label="Close menu">&times;</button></div>
+  <nav aria-label="Menu">
+    <a href="./">Home</a>
+    <a href="roster.html">Roster</a>
+    <a href="releases.html">Releases</a>
+    <a href="./#contact">Contact</a>
+  </nav>
+  <div class="menu-foot">
+    <a href="mailto:gd@477records.com">gd@477records.com</a>
+    <img src="assets/wordmark.svg?v=2" width="3790" height="1870" alt="">
+  </div>
+</div>
+<script>
+(function () {
+  var m = document.getElementById('menu'), b = document.querySelector('.menu-btn');
+  function set(open) { m.hidden = !open; b.setAttribute('aria-expanded', open); document.documentElement.classList.toggle('menu-open', open); }
+  b.addEventListener('click', function () { set(true); });
+  m.querySelector('.menu-close').addEventListener('click', function () { set(false); });
+  m.addEventListener('click', function (ev) { if (ev.target.closest('a')) set(false); });
+  addEventListener('keydown', function (ev) { if (ev.key === 'Escape') set(false); });
+})();
+</script>
+<main class="pad legal">
+  <h1 class="mega">Not found</h1>
+  <div class="legal-body">
+    <p>This page doesn’t exist. The 477 Records site was rebuilt in November 2026, so older links may no longer work.</p>
+    <p class="links"><a class="under" href="./">Home</a><a class="under" href="roster.html">Roster</a><a class="under" href="releases.html">Releases</a></p>
+  </div>
+</main>
+<footer class="foot pad">
+  <section class="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <div>
+      <p>477 Records is a New York-based independent record label.</p>
+      <p>Founded by Two Feet, a platinum-and-gold-certified musician and producer, in 2024, 477 Records grew out of his experience as an independent artist.</p>
+      <p>We find, sign, and develop independent artists and help them develop their sound. We offer the reach and services of a major label while staying independent.</p>
+    </div>
+  </section>
+  <div class="foot-row">
+    <span>© 2026 477 Records</span>
+    <span class="foot-links"><a href="https://www.instagram.com/official477records/" target="_blank" rel="noopener">Instagram</a><a href="privacy.html">Privacy</a><a href="mailto:gd@477records.com">gd@477records.com</a></span>
+  </div>
+</footer>
+</body>
+</html>

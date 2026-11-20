@@ -45,12 +45,38 @@ BIOS = {
 # Without it the build is the hidden preview at 477records.github.io/site.
 LIVE = os.environ.get("LIVE") == "1"
 DOMAIN = "www.477records.com"
+SITE = f"https://{DOMAIN}/"
+INSTAGRAM = "https://www.instagram.com/official477records/"
+ABOUT = [
+    "477 Records is a New York-based independent record label.",
+    "Founded by Two Feet, a platinum-and-gold-certified musician and producer, in 2024, 477 Records grew out of his experience as an independent artist.",
+    "We find, sign, and develop independent artists and help them develop their sound. We offer the reach and services of a major label while staying independent.",
+]
+PAGES = []   # every indexable page, for sitemap.xml
 
 
-def ROBOTS(name):
-    if not LIVE:
+def url_of(name):
+    return SITE + ("" if name == "index.html" else name)
+
+
+def ROBOTS(name, index=True):
+    if not LIVE or not index:
         return '<meta name="robots" content="noindex">'
-    return f'<link rel="canonical" href="https://{DOMAIN}/{"" if name == "index.html" else name}">'
+    return f'<link rel="canonical" href="{url_of(name)}">'
+
+
+def jsonld(obj):
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
+LABEL = {
+    "@type": "Organization", "@id": SITE + "#label", "name": "477 Records", "url": SITE,
+    "logo": SITE + "assets/icon-180.png", "email": "gd@477records.com",
+    "description": " ".join(ABOUT),
+    "address": {"@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US"},
+    "founder": {"@type": "MusicGroup", "name": "Two Feet", "url": SITE + "two-feet.html"},
+    "sameAs": [INSTAGRAM],
+}
 
 
 e = html.escape
@@ -72,7 +98,9 @@ def nice_date(r):
     return d.strftime("%b %Y")
 
 
-def page(name, title, desc, body, current=""):
+def page(name, title, desc, body, current="", image="assets/og.jpg", ld=None, index=True, base=""):
+    if index:
+        PAGES.append(name)
     def nav(href, label):
         cur = ' aria-current="page"' if href == current else ""
         return f'<a href="{href}"{cur}>{label}</a>'
@@ -83,13 +111,17 @@ def page(name, title, desc, body, current=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
+{f'<base href="{base}">' if base else ""}
+<meta property="og:site_name" content="477 Records">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://www.477records.com/assets/og.jpg">
+<meta property="og:url" content="{url_of(name)}">
+<meta property="og:image" content="{SITE}{image}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#edf0eb">
-{ROBOTS(name)}
+{ROBOTS(name, index)}
+{jsonld(ld) if ld else ""}
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="stylesheet" href="assets/site.css?v={CSS_V}">
@@ -132,14 +164,12 @@ def page(name, title, desc, body, current=""):
   <section class="about" aria-labelledby="about-h">
     <h2 id="about-h">About</h2>
     <div>
-      <p>477 Records is a New York-based independent record label.</p>
-      <p>Founded by Two Feet, a platinum-and-gold-certified musician and producer, in 2024, 477 Records grew out of his experience as an independent artist.</p>
-      <p>We find, sign, and develop independent artists and help them develop their sound. We offer the reach and services of a major label while staying independent.</p>
+{"".join(f"      <p>{e(t)}</p>" + chr(10) for t in ABOUT).rstrip()}
     </div>
   </section>
   <div class="foot-row">
     <span>© 2026 477 Records</span>
-    <a href="mailto:gd@477records.com">gd@477records.com</a>
+    <span class="foot-links"><a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram</a><a href="privacy.html">Privacy</a><a href="mailto:gd@477records.com">gd@477records.com</a></span>
   </div>
 </footer>
 </body>
@@ -171,19 +201,19 @@ def cover_li(r, eager=False):
     ls = listen(r)
     where = "".join(f'<a href="{e(u)}" target="_blank" rel="noopener" aria-label="{e(r["title"])} on {n}">{short(n)}</a>' for n, u in ls)
     return (f'<li data-tags="{" ".join(tags(r))}"><a class="art" href="{e(ls[0][1])}" target="_blank" rel="noopener">'
-            f'<span class="pic"><img src="assets/r/{r["id"]}.jpg" width="500" height="500" alt=""{load}></span>'
+            f'<span class="pic"><img src="assets/r/{r["id"]}.jpg" width="500" height="500" alt="{e(r["title"])} by {e(r["artist"])}, cover art"{load}></span>'
             f'<span class="t">{e(r["title"])}</span><span class="s">{e(r["artist"])}</span>'
             f'<span class="d">{nice_date(r)}</span></a><span class="listen">{where}</span></li>')
 
 
 # ---------- home ----------
 people = "\n".join(
-    f'      <li><a href="roster.html#{a["slug"]}"><span class="pic"><img src="assets/{a["img"]}" width="640" height="800" '
+    f'      <li><a href="{a["slug"]}.html"><span class="pic"><img src="assets/{a["img"]}" width="640" height="800" '
     f'alt="{e(a["name"])}" loading="lazy"></span><span class="t">{e(a["name"])}</span></a></li>'
     for a in ARTISTS)
 latest = "\n".join("      " + cover_li(r) for r in releases[:8])
-page("index.html", "477 Records",
-     "477 Records is a New York-based independent record label.",
+page("index.html", "477 Records | Independent record label, New York",
+     "477 Records is a New York-based independent record label. Home of Two Feet, Michele Morrone, Brothel, Bec Lauder and the Noise, Toby Mai and WNTRBRK.",
      f"""<main class="home">
   <section class="hero pad">
     <figure class="lockup">
@@ -213,7 +243,10 @@ page("index.html", "477 Records",
     <p>Reach out for information</p>
     <a href="mailto:gd@477records.com">gd@477records.com</a>
   </section>
-</main>""")
+</main>""", ld={"@context": "https://schema.org", "@graph": [
+        LABEL,
+        {"@type": "WebSite", "@id": SITE + "#site", "url": SITE, "name": "477 Records", "publisher": {"@id": SITE + "#label"}},
+    ]})
 
 # ---------- roster ----------
 cards = []
@@ -230,12 +263,12 @@ for a in ARTISTS:
     cards.append(f"""    <li class="card" id="{a["slug"]}">
       <a class="shot" href="#{a["slug"]}" aria-label="{e(a["name"])}"><img src="assets/{a["img"]}" width="640" height="800" alt="{e(a["name"])}"></a>
       <div class="info">
-        <h2>{e(a["name"])}</h2>
+        <h2><a href="{a["slug"]}.html">{e(a["name"])}</a></h2>
         <p class="bio">{e(BIOS.get(a["slug"], ""))}</p>
-        <p class="links"><a class="under" href="{a["spotify"]}" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="releases.html#{a["slug"]}">See releases</a></p>
+        <p class="links"><a class="under" href="{a["spotify"]}" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="{a["slug"]}.html">Releases and more</a></p>
       </div>
     </li>""")
-page("roster.html", "Roster | 477 Records", "The artists signed to 477 Records.",
+page("roster.html", "Roster | 477 Records", "The artists on 477 Records: " + ", ".join(a["name"] for a in ARTISTS) + ".",
      f"""<main>
   <h1 class="mega roster-word">Roster</h1>
   <ol class="reel">
@@ -267,7 +300,8 @@ page("roster.html", "Roster | 477 Records", "The artists signed to 477 Records."
   if (start) centre(start, false);
   pick();
 }})();
-</script>""", current="roster.html")
+</script>""", current="roster.html", ld={"@context": "https://schema.org", "@type": "ItemList", "name": "477 Records roster",
+     "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": SITE + a["slug"] + ".html", "name": a["name"]} for i, a in enumerate(ARTISTS)]})
 
 # ---------- releases ----------
 filters = [dict(slug="all", name="All")] + ARTISTS + EXTRA_FILTERS
@@ -275,7 +309,7 @@ fbtn = "\n".join(
     f'        <li><button type="button" data-filter="{f["slug"]}" aria-pressed="{"true" if f["slug"] == "all" else "false"}">{e(f["name"])}</button></li>'
     for f in filters)
 grid = "\n".join("    " + cover_li(r, eager=i < 8) for i, r in enumerate(releases))
-page("releases.html", "Releases | 477 Records", "Every release on 477 Records.",
+page("releases.html", "Releases | 477 Records", f"All {len(releases)} releases on 477 Records, with links to Spotify, Apple Music and YouTube.",
      f"""<main class="pad">
   <div class="works-head">
     <h1 class="mega">Releases<sup id="count">{len(releases)}</sup></h1>
@@ -334,9 +368,96 @@ page("releases.html", "Releases | 477 Records", "Every release on 477 Records.",
 }})();
 </script>""", current="releases.html")
 
+# ---------- artist pages ----------
+def first_sentences(t, n=155):
+    out = ""
+    for part in t.replace("\u201d", "\u201d ").split(". "):
+        nxt = (out + part.strip() + ". ") if out else (part.strip() + ". ")
+        if len(nxt) > n and out:
+            break
+        out = nxt
+    out = out.strip().replace(".. ", ". ").rstrip(".") + "."
+    if len(out) < 90:   # first sentence too thin for a search snippet: use more of the bio, cut at a word
+        out = t if len(t) <= n else t[:n].rsplit(" ", 1)[0].rstrip(",;:") + "\u2026"
+    return out
+
+
+for a in ARTISTS:
+    mine = [r for r in releases if a["slug"] in tags(r)]
+    bio = BIOS.get(a["slug"], "")
+    tiles = "\n".join("      " + cover_li(r, eager=i < 4) for i, r in enumerate(mine))
+    page(a["slug"] + ".html", f'{a["name"]} | 477 Records', first_sentences(bio) if bio else f'{a["name"]} on 477 Records.',
+         f"""<main class="pad artist">
+  <h1 class="mega artist-name">{e(a["name"])}</h1>
+  <div class="artist-top">
+    <figure class="artist-shot"><img src="assets/{a["img"]}" width="640" height="800" alt="{e(a["name"])}"></figure>
+    <div class="artist-info">
+      <p class="artist-bio">{e(bio)}</p>
+      <p class="links"><a class="under" href="{a["spotify"]}" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="roster.html#{a["slug"]}">Back to the roster</a></p>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="sec-head"><h2>Releases<sup>{len(mine)}</sup></h2><a class="under" href="releases.html">All {len(releases)} releases</a></div>
+    <ul class="tiles covers">
+{tiles}
+    </ul>
+  </section>
+  <div class="works-end"></div>
+</main>""", current="roster.html", image="assets/" + a["img"], ld={
+        "@context": "https://schema.org", "@type": "MusicGroup", "@id": SITE + a["slug"] + ".html#artist",
+        "name": a["name"], "url": SITE + a["slug"] + ".html", "image": SITE + "assets/" + a["img"],
+        "description": bio, "sameAs": [a["spotify"]],
+        "album": [{"@type": "MusicAlbum", "name": r["title"], "url": r["apple"], "datePublished": r["date"],
+                   "image": SITE + "assets/r/" + str(r["id"]) + ".jpg", "byArtist": {"@type": "MusicGroup", "name": r["artist"]}}
+                  for r in mine[:20]],
+    })
+
+# ---------- privacy ----------
+page("privacy.html", "Privacy | 477 Records", "How the 477 Records website handles your information.",
+     """<main class="pad legal">
+  <h1 class="mega">Privacy</h1>
+  <div class="legal-body">
+    <p class="k">Last updated November 20, 2026</p>
+    <h2>What we collect</h2>
+    <p>Nothing. This website has no accounts, forms, mailing list, analytics or advertising tracking, and it does not set cookies.</p>
+    <h2>Our host</h2>
+    <p>The site is hosted on GitHub Pages. Like any web host, GitHub may record technical information such as your IP address when you load a page, for security and to keep the service running. See <a class="under" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub\u2019s privacy statement</a>.</p>
+    <h2>Links to other services</h2>
+    <p>Links to Spotify, Apple Music, YouTube and Instagram take you to those services, which have their own privacy policies.</p>
+    <h2>Email</h2>
+    <p>If you email us, we use your message and address only to reply.</p>
+    <h2>Questions</h2>
+    <p>Write to <a class="under" href="mailto:gd@477records.com">gd@477records.com</a>.</p>
+  </div>
+</main>""")
+
+# ---------- 404 (served for any missing address, so asset paths need a base) ----------
+page("404.html", "Page not found | 477 Records", "This page does not exist.",
+     """<main class="pad legal">
+  <h1 class="mega">Not found</h1>
+  <div class="legal-body">
+    <p>This page doesn\u2019t exist. The 477 Records site was rebuilt in November 2026, so older links may no longer work.</p>
+    <p class="links"><a class="under" href="./">Home</a><a class="under" href="roster.html">Roster</a><a class="under" href="releases.html">Releases</a></p>
+  </div>
+</main>""", index=False, base="/" if LIVE else "/site/")
+
+# old Wix address
+open(os.path.join(ROOT, "portfolio.html"), "w").write(
+    '<!doctype html><meta charset="utf-8"><title>477 Records</title><meta name="robots" content="noindex">'
+    '<link rel="canonical" href="' + SITE + 'roster.html"><meta http-equiv="refresh" content="0; url=roster.html">'
+    '<a href="roster.html">Roster</a>\n')
+
+# ---------- sitemap + robots ----------
+lastmod = TODAY
+open(os.path.join(ROOT, "sitemap.xml"), "w").write(
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + "".join(f"  <url><loc>{url_of(n)}</loc><lastmod>{lastmod}</lastmod></url>\n" for n in PAGES)
+    + "</urlset>\n")
+open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
+
 cname = os.path.join(ROOT, "CNAME")
 if LIVE:
     open(cname, "w").write(DOMAIN + "\n")
 elif os.path.exists(cname):
     os.remove(cname)
-print("built 3 pages,", len(releases), "releases")
+print("built", len(PAGES), "indexable pages,", len(releases), "releases")
