@@ -276,8 +276,8 @@ for a in ARTISTS:
       <a class="shot" href="#{a["slug"]}" aria-label="{e(a["name"])}"><img src="assets/{a["img"]}" width="640" height="800" alt="{e(a["name"])}"></a>
       <div class="info">
         <h2><a href="{a["slug"]}.html">{e(a["name"])}</a></h2>
-        <p class="bio">{e(BIOS.get(a["slug"], ""))}</p>
-        <p class="links"><a class="under" href="{a["spotify"]}" target="_blank" rel="noopener">Listen on Spotify</a><a class="under" href="{a["slug"]}.html">Releases and more</a></p>
+        <p class="links"><a class="under" href="{a["spotify"]}" target="_blank" rel="noopener"><span class="lg">Listen on </span>Spotify</a><button class="under bio-btn" type="button" aria-expanded="false" aria-controls="bio-{a["slug"]}">Bio</button><a class="under" href="{a["slug"]}.html">Releases</a></p>
+        <p class="bio" id="bio-{a["slug"]}">{e(BIOS.get(a["slug"], ""))}</p>
       </div>
     </li>""")
 page("roster.html", "Roster | 477 Records", "The artists on 477 Records: " + ", ".join(a["name"] for a in ARTISTS) + ".",
@@ -307,6 +307,12 @@ page("roster.html", "Roster | 477 Records", "The artists on 477 Records: " + ", 
   addEventListener('resize', pick);
   cards.forEach(function (c) {{
     c.querySelector('.shot').addEventListener('click', function (ev) {{ ev.preventDefault(); centre(c, true); history.replaceState(null, '', '#' + c.id); }});
+  }});
+  [].forEach.call(document.querySelectorAll('.bio-btn'), function (b) {{
+    b.addEventListener('click', function () {{
+      var open = b.closest('.card').classList.toggle('bio-open');
+      b.setAttribute('aria-expanded', open); b.textContent = open ? 'Hide bio' : 'Bio';
+    }});
   }});
   var start = location.hash && document.getElementById(location.hash.slice(1));
   if (start) centre(start, false);

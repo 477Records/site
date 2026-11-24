@@ -205,6 +205,15 @@ main { padding-top: var(--head); }
   .card { grid-template-columns: 38% minmax(0, 1fr); align-items: start; margin-bottom: 22px; }
   .card .shot { width: 100%; }
   .card .info { opacity: 1; transform: none; pointer-events: auto; }
+  .card .bio { display: none; margin-top: 12px; }
+  .card.bio-open .bio { display: block; }
+  .card { align-items: center; }
+  .card.bio-open { align-items: start; }
+  .card .bio-btn { display: inline; }
+  .card .info .bio { order: 2; font-size: 14px; line-height: 1.4; margin-top: 10px; }
+  .card .links .lg { display: none; }
+  .card h2 { font-size: 19px; margin-bottom: 8px; }
+  .card .info .links { flex-direction: row; flex-wrap: wrap; gap: 4px 14px; margin-top: 0; font-size: 14px; }
 
   .controls { grid-template-columns: 1fr; gap: 22px; }
   .about { grid-template-columns: 1fr; gap: 8px; }
@@ -288,3 +297,11 @@ main { padding-top: var(--head); }
   .foot-row { flex-direction: column; gap: 8px; }
   .foot-links { justify-content: flex-start; }
 }
+
+/* bio toggle is phone-only; on desktop the bio shows beside the active portrait */
+.bio-btn { display: none; text-align: left; }
+.card .info { display: flex; flex-direction: column; }
+.card .info h2 { order: -1; }
+.card .bio { order: 0; }
+.card .links { order: 1; }
+.card .links { flex-wrap: wrap; }
