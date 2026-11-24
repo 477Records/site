@@ -217,7 +217,7 @@ page("index.html", "477 Records | Independent record label, New York",
      f"""<main class="home">
   <section class="hero pad">
     <figure class="lockup">
-      <img class="tape" src="assets/tape.webp" width="874" height="329" alt="">
+      <img class="tape" src="assets/smear.webp" width="1600" height="324" alt="">
       <img class="mark" src="assets/wordmark.svg?v=2" width="3790" height="1870" alt="477 Records">
     </figure>
     <div class="pitch">
