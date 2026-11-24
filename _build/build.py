@@ -217,13 +217,25 @@ page("index.html", "477 Records | Independent record label, New York",
      f"""<main class="home">
   <section class="hero pad">
     <figure class="lockup">
-      <img class="tape" src="assets/smear.webp" width="1600" height="324" alt="">
+      <img class="tape" src="assets/eyes.webp" width="1294" height="342" alt="">
       <img class="mark" src="assets/wordmark.svg?v=2" width="3790" height="1870" alt="477 Records">
     </figure>
     <div class="pitch">
       <h1>477 Records is a New York&#8209;based independent record label.</h1>
     </div>
   </section>
+  <script>
+  (function () {{
+    /* keep the description's last line on the baseline of "Records" (the wordmark has 200/1870 of space under it) */
+    var mark = document.querySelector('.lockup .mark'), h = document.querySelector('.pitch h1');
+    function fit() {{
+      if (getComputedStyle(h.parentNode).justifySelf !== 'end') {{ h.style.paddingBottom = ''; return; }}
+      var f = parseFloat(getComputedStyle(h).fontSize);
+      h.style.paddingBottom = Math.max(0, mark.getBoundingClientRect().height * 200 / 1870 - .255 * f) + 'px';
+    }}
+    addEventListener('resize', fit); if (mark.complete) fit(); else mark.addEventListener('load', fit);
+  }})();
+  </script>
 
   <section class="sec pad">
     <div class="sec-head"><h2>Roster</h2><a class="under" href="roster.html">View the roster</a></div>

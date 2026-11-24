@@ -78,7 +78,7 @@ main { padding-top: var(--head); }
 }
 .lockup { align-self: center; width: min(100%, 620px); margin: 0; }
 .lockup .tape { width: 100%; }
-.lockup .mark { width: 58.8%; margin: 1.5% 0 0 var(--in); }
+.lockup .mark { width: 58.8%; margin: 5% 0 0 var(--in); animation: none !important; }
 .hero { grid-template-columns: minmax(0, 1fr) auto; align-items: end; align-content: center; gap: clamp(20px, 2.6vw, 34px); }
 .pitch { max-width: 300px; justify-self: end; }
 /* sit the last line of the description on the baseline of "Records" (wordmark has 200/1870 of space under its baseline) */
@@ -90,9 +90,9 @@ main { padding-top: var(--head); }
 .pitch p { margin: 0 0 8px; color: var(--soft); }
 .pitch p:last-child { margin: 0; }
 @media (prefers-reduced-motion: no-preference) {
-  .lockup .tape { animation: paint .8s cubic-bezier(.6, .05, .25, 1) both; }
+  .lockup .tape { animation: open .7s cubic-bezier(.2, .8, .2, 1) both; }
   .lockup .mark { animation: rise .7s .25s cubic-bezier(.2, .8, .2, 1) both; }
-  @keyframes paint { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  @keyframes open { from { clip-path: inset(50% 0 50% 0); } to { clip-path: inset(0 0 0 0); } }
   @keyframes rise { from { transform: translateY(10px); } to { transform: none; } }
 }
 
