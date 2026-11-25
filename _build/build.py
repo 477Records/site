@@ -435,9 +435,11 @@ page("privacy.html", "Privacy | 477 Records", "How the 477 Records website handl
      """<main class="pad legal">
   <h1 class="mega">Privacy</h1>
   <div class="legal-body">
-    <p class="k">Last updated November 20, 2026</p>
+    <p class="k">Last updated November 25, 2026</p>
     <h2>What we collect</h2>
-    <p>Nothing. This website has no accounts, forms, mailing list, analytics or advertising tracking, and it does not set cookies.</p>
+    <p>Nothing, on the main pages of this website. It has no accounts, forms or mailing list, and outside the listen and ticket pages described below it has no analytics or advertising tracking and sets no cookies.</p>
+    <h2>Listen and ticket pages</h2>
+    <p>Our listen and ticket pages use a Meta pixel, which lets Meta measure visits that come from our ads. The rest of this site has no tracking.</p>
     <h2>Our host</h2>
     <p>The site is hosted on GitHub Pages. Like any web host, GitHub may record technical information such as your IP address when you load a page, for security and to keep the service running. See <a class="under" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub\u2019s privacy statement</a>.</p>
     <h2>Links to other services</h2>
@@ -472,6 +474,26 @@ open(os.path.join(ROOT, "sitemap.xml"), "w").write(
     + "".join(f"  <url><loc>{url_of(n)}</loc><lastmod>{lastmod}</lastmod></url>\n" for n in PAGES)
     + "</urlset>\n")
 open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
+
+# ---------- listen + ticket pages (source of truth: ~/477/listen-links and ~/477/tix-links) ----------
+# Copies their committed files to /listen and /tix on this site and points share images at this domain.
+# The originals stay live at 477records.github.io/listen and /tix so links already in circulation keep working.
+import shutil, subprocess
+for folder, srcname, skip in (("listen", "listen-links", ("auto/", "test/")), ("tix", "tix-links", ())):
+    src = os.path.join(os.path.dirname(ROOT), srcname)
+    if not os.path.isdir(os.path.join(src, ".git")):
+        continue
+    dst = os.path.join(ROOT, folder)
+    shutil.rmtree(dst, ignore_errors=True)
+    for f in subprocess.run(["git", "-C", src, "ls-files"], capture_output=True, text=True).stdout.split("\n"):
+        if not f or f == ".nojekyll" or f.startswith(skip):
+            continue
+        out = os.path.join(dst, f); os.makedirs(os.path.dirname(out), exist_ok=True)
+        if f.endswith((".html", ".js")):
+            t = open(os.path.join(src, f), encoding="utf-8").read().replace(f"https://477records.github.io/{folder}/", f"{SITE}{folder}/")
+            open(out, "w", encoding="utf-8").write(t)
+        else:
+            shutil.copyfile(os.path.join(src, f), out)
 
 cname = os.path.join(ROOT, "CNAME")
 if LIVE:
