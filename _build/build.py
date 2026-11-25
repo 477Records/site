@@ -496,6 +496,9 @@ for folder, srcname, skip in (("listen", "listen-links", ("auto/", "test/")), ("
         else:
             shutil.copyfile(os.path.join(src, f), out)
 
+# Google Search Console ownership file (property https://www.477records.com/, Geoffrey's Gmail). Must stay on the site.
+open(os.path.join(ROOT, "google9fe7713add134411.html"), "w").write("google-site-verification: google9fe7713add134411.html")
+
 cname = os.path.join(ROOT, "CNAME")
 if LIVE:
     open(cname, "w").write(DOMAIN + "\n")
