@@ -120,6 +120,7 @@ def page(name, title, desc, body, current="", image="assets/og.jpg", ld=None, in
 <meta property="og:image" content="{SITE}{image}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#edf0eb">
+<meta name="facebook-domain-verification" content="69kuebgg3iud865gvmq57x4qjat2bg">
 {ROBOTS(name, index)}
 {jsonld(ld) if ld else ""}
 <link rel="icon" type="image/png" href="assets/favicon.png">
